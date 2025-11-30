@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 
 # install base dependencies and Node.js LTS
 RUN apt-get update && apt-get install -y \
-    curl git jq figlet figlet-fonts build-essential bash-completion \
+    curl git jq figlet build-essential bash-completion \
   && rm -rf /var/lib/apt/lists/* \
   && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
   && apt-get update && apt-get install -y nodejs \

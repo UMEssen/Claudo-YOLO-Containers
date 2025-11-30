@@ -58,7 +58,7 @@ while [ "$i" -le $ITERATION_COUNT ]; do
   printf '\n\n'
   printf '%0.s▄' $(seq 1 80)
   printf '\n\n\n\n'
-  (figlet -f doh "$i" | sed -E '/^[[:space:]]*$/d' | sed 's/^/    /') || true
+  (figlet "$i" | sed -E '/^[[:space:]]*$/d' | sed 's/^/    /') || true
   printf '\n'
 
   # Add JSON formatted log header with iteration number
@@ -75,5 +75,5 @@ echo "{\"type\":\"loop_all_completed\", \"message\":\"==================== Loop 
 printf '\n\n'
 printf '%0.s▄' $(seq 1 80)
 printf '\n\n\n'
-(printf '\033[32m'; figlet -f doh "Done" | sed -E '/^[[:space:]]*$/d' | sed 's/^/  /'; printf '\033[0m') || true
+(printf '\033[32m'; figlet "Done" | sed -E '/^[[:space:]]*$/d' | sed 's/^/  /'; printf '\033[0m') || true
 printf '\n\n'
